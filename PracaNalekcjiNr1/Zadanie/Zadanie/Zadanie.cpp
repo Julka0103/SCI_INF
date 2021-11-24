@@ -31,6 +31,18 @@ string cezar(string t) {
 	return t;
 }
 
+string przestawieniowy(string t) {
+	for (int i = 0; i < t.length(); i = i + 2) {
+		if (i + 2 > t.length()) {
+			break;
+		}
+		else {
+			swap(t[i], t[i + 1]);
+		}
+	}
+	return t;
+}
+
 int main()
 {
 	string tekst;
@@ -49,6 +61,9 @@ int main()
 	switch (x) {
 	case 1:
 		cout << cezar(tekst);
+		break;
+	case 2:
+		cout << przestawieniowy(tekst);
 		break;
 	}
 

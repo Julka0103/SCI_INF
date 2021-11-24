@@ -1,3 +1,5 @@
 ﻿  Zadanie.cpp
 C:\Users\julia\Desktop\SCI_INF\PracaNalekcjiNr1\Zadanie\Zadanie\Zadanie.cpp(19,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\julia\Desktop\SCI_INF\PracaNalekcjiNr1\Zadanie\Zadanie\Zadanie.cpp(35,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\julia\Desktop\SCI_INF\PracaNalekcjiNr1\Zadanie\Zadanie\Zadanie.cpp(36,13): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
   Zadanie.vcxproj -> C:\Users\julia\Desktop\SCI_INF\PracaNalekcjiNr1\Zadanie\Debug\Zadanie.exe
