@@ -43,6 +43,12 @@ string przestawieniowy(string t) {
 	return t;
 }
 
+string dwa(string t) {
+	string c = cezar(t);
+	c = przestawieniowy(c);
+	return c;
+}
+
 int main()
 {
 	string tekst;
@@ -64,6 +70,9 @@ int main()
 		break;
 	case 2:
 		cout << przestawieniowy(tekst);
+		break;
+	case 3:
+		cout << dwa(tekst);
 		break;
 	}
 
