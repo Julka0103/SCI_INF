@@ -30,6 +30,24 @@ string cezar(string t) {
 
 	return t;
 }
+void odszyfrowanie(string t) {
+	string odszyfrowane;
+	for (int i = 1; i < 27; i++){
+		odszyfrowane = t;
+		for (int k = 0; k < t.length(); k++) {
+			if (t[k] == 32) {
+				continue;
+			}
+			else if (t[k] - i < 97) {
+				odszyfrowane[k] = 122 - (96 - (odszyfrowane[k] - i));
+			}
+			else {
+				odszyfrowane[k] = odszyfrowane[k] - i;
+			}
+		}
+		cout << odszyfrowane << endl;
+	}
+}
 
 string przestawieniowy(string t) {
 	for (int i = 0; i < t.length(); i = i + 2) {
@@ -74,6 +92,8 @@ int main()
 	case 3:
 		cout << dwa(tekst);
 		break;
+	case 4:
+		odszyfrowanie(tekst);
+		break;
 	}
-
 }
