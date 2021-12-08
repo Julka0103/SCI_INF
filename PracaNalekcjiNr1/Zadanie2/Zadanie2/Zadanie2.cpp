@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <string>
-
+#include <utility>
 using namespace std;
 class Cypher {
 public:
@@ -72,6 +72,29 @@ public:
 	}
 };
 
+pair <int, int> publicKey;
+pair <int, int> privateKey;
+
+void generatorRSA() {
+	int p = 3;
+	int q = 5;
+	int n = p * q;
+	int eul = (p - 1) * (q - 1);
+	int e = 7;
+	int d = 0;
+	for(;;)
+	{
+		if ((d * e) % eul == 1) {
+			if (!(d == e)) {
+				break;
+			}
+		}
+		d++;
+	}
+	publicKey = make_pair(n, e);
+	privateKey = make_pair(n, d);
+}
+
 int main()
 {
 	string tekst;
@@ -86,6 +109,7 @@ int main()
 	cout << "2. Szyfr przestawieniowy\n";
 	cout << "3. Oba szyfry\n";
 	cout << "4. Odszyfruj tekst\n";
+	cout << "5. Utworz klucze RSA\n";
 
 	int x;
 	cin >> x;
@@ -101,6 +125,11 @@ int main()
 		break;
 	case 4:
 		obiekt2.odszyfrowanie(tekst);
+		break;
+	case 5:
+		generatorRSA();
+		cout << "Publiczny: n-> " << publicKey.first << " e-> " << publicKey.second << endl;
+		cout << "Prywatny: n-> " << privateKey.first << " d-> " << privateKey.second << endl;
 		break;
 	}
 }
