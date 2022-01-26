@@ -1,0 +1,57 @@
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+//Funkcja wypełnia vektor liczbami losowymi
+void genRandomValues(vector<int>& vec)
+{
+	srand(time(NULL));
+	for (int a = 0; a < vec.size(); a++)
+	{
+		vec.at(a) = rand() % 100;
+	}
+}
+
+// Wyświetla vektor
+void printVec(const vector<int>& vec)
+{
+	for (int value : vec)
+	{
+		cout << value << std::endl;
+	}
+}
+
+void szukajLiczby(vector<int>& vec)
+{
+	int szukana;
+	int licznik = 0;
+	bool check = false;
+	cout << "Podaj liczbe, ktora chcesz znalezc: " << endl;
+	cin >> szukana;
+	for (int a = 0; a < vec.size(); a++)
+	{
+		if (vec.at(a) == szukana) {
+			cout << "liczba " << szukana << " jest w indeksie: " << a << endl;
+			check = true;
+			break;
+		}
+		licznik++;
+	}
+	if (check == false) {
+		cout << "-1" << endl;
+	}
+}
+
+
+int main()
+{
+	vector<int> vec(20); // tworzy wektor 100 elementow
+	genRandomValues(vec); // wywola funkcje uzupelniajaca wektor
+	printVec(vec); // wyswietla vector
+	szukajLiczby(vec);
+
+
+}
